@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo-app</title>
+    <style>
+        .container {
+            height: 800px;
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        header {
+            width: 940px;
+            height: 100px;            
+            font-size: 30px;
+            background-color: black;
+            margin-top: 50px;
+            color: white;
+            line-height: 100px;
+        }
+
+        header a {
+            margin-left: 20px;
+        }
+
+        .form-group {
+            width: 100%;
+            height: 70px;
+            line-height: 70px;
+        }
+
+        .form-group label {
+            margin-left: 20px;
+        }
+
+        .form-group2 {
+            width: 940px;
+            height: 44px;
+            border: 1px solid gray;
+            border-radius: 6px;
+        }
+
+        input {
+            width: 830px;
+            height: 42px;
+            border: 0;
+            outline: none;
+            float: left;
+            margin-left: 10px;
+            font-size: 17px;
+        }
+        button {
+            width: 96px;
+            height: 45px;
+            border: 0;
+            background-color: gray;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            width: 918px;
+            height: 29px;
+            border: 1px solid gray;
+            list-style-type: none;
+            border-radius: 3px;
+            line-height: 29px;
+            padding: 10px;
+        }
+    </style>
+    <script>
+
+        function newRegister() {
+            var newItem = document.createElement("li");
+            var subject = document.querySelector("#subject");
+            var newText = document.createTextNode(subject.value);
+
+            newItem.appendChild(newText);
+
+            var itemList = document.querySelector("#todoList");
+            itemList.appendChild(newItem);
+
+            subject.value="";
+        }
+        
+        
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a>ToDo List</a>
+        </header>
+        <main>
+            <form>
+                <div class="form-group">
+                    <label for="title">오늘 할일을 작성해보세요.</label>
+                </div>
+                <div class="form-group2">
+                    <input type="text" id="subject" placeholder="할일을 입력하세요.">
+                    <button onclick="newRegister(); return false;">추가</button>
+                </div>
+            </form>
+            <ul id="todoList"></ul>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
